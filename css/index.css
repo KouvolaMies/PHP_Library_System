@@ -1,0 +1,80 @@
+body{
+    background-color: rgb(70, 70, 70);
+    color: rgb(150, 150, 150);
+}
+#indexBox{
+    margin: auto;
+    margin-top: 15vh;
+    height: 70vh;
+    width: 30vw;
+    background-color: rgb(40, 40, 40);
+    border: solid;
+    border-color: rgb(190, 190, 190);
+    border-radius: 5%;
+}
+#loginButton{
+    font-size: 3vw;
+    width: 20vw;
+    height: 20vh;
+    margin-left: 5vw;
+    margin-top: 2.5vh;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+#registerButton{
+    font-size: 3vw;
+    width: 20vw;
+    height: 20vh;
+    margin-left: 5vw;
+    margin-top: 2.5vh;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+#dashboardButton{
+    font-size: 3vw;
+    width: 20vw;
+    height: 20vh;
+    margin-left: 5vw;
+    margin-top: 2.5vh;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+@media (max-width: 800px){
+    #indexBox{
+        margin: auto;
+        margin-top: 15vh;
+        height:70vh;
+        width: 80vw;
+        background-color: rgb(40, 40, 40);
+        border: solid;
+        border-color: rgb(190, 190, 190);
+        border-radius: 5%;
+    }
+    #loginButton{
+        font-size: 10vw;
+        width: 60vw;
+        height: 20vh;
+        margin-left: 10vw;
+        margin-top: 2.5vh;
+        border-radius: 1vw;
+        cursor: pointer;
+    }
+    #registerButton{
+        font-size: 10vw;
+        width: 60vw;
+        height: 20vh;
+        margin-left: 10vw;
+        margin-top: 2.5vh;
+        border-radius: 1vw;
+        cursor: pointer;
+    }
+    #dashboardButton{
+        font-size: 10vw;
+        width: 60vw;
+        height: 20vh;
+        margin-left: 10vw;
+        margin-top: 2.5vh;
+        border-radius: 1vw;
+        cursor: pointer;
+    }
+}

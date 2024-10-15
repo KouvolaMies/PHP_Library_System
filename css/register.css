@@ -1,0 +1,120 @@
+body{
+    background-color: rgb(70, 70, 70);
+    color: rgb(150, 150, 150);
+}
+#indexBox{
+    margin: auto;
+    margin-top: 10vh;
+    height: 80vh;
+    width: 30vw;
+    background-color: rgb(40, 40, 40);
+    border: solid;
+    border-color: rgb(190, 190, 190);
+    border-radius: 5%;
+}
+#registerText{
+    width: 30vw;
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 3vh;
+}
+#registerRow{
+    width: 30vw;
+    margin-left: 5vw;
+    margin-top: 3vh;
+    font-size: 2.5vh;
+}
+#registerInput{
+    width: 10vw;
+    float: right;
+    margin-right: 10vw;
+}
+#registerSubmit{
+    margin-top: 3vh;
+    margin-left: 5vw;
+    width: 20vw;
+    height: 5vh;
+    font-size: 3vh;
+    background-color: rgb(220, 220, 220);
+    border: solid;
+    border-color: rgb(128, 128, 128);
+    border-radius: 1vh;
+    cursor: pointer;
+}
+#indexButton{
+    margin-top: 3vh;
+    margin-left: 5vw;
+    width: 20vw;
+    height: 5vh;
+    font-size: 3vh;
+    background-color: rgb(220, 220, 220);
+    border: solid;
+    border-color: rgb(128, 128, 128);
+    border-radius: 1vh;
+    cursor: pointer;
+}
+#errorMessage{
+    width: 30vw;
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 2vh;
+}
+@media (max-width: 800px){
+    #indexBox{
+        margin: auto;
+        margin-top: 10vh;
+        height:80vh;
+        width: 80vw;
+        background-color: rgb(40, 40, 40);
+        border: solid;
+        border-color: rgb(190, 190, 190);
+        border-radius: 5%;
+    }
+    #registerText{
+        width: 80vw;
+        text-align: center;
+        margin-top: 3vh;
+        font-size: 3vh;
+    }
+    #registerRow{
+        width: 80vw;
+        margin-left: 5vw;
+        margin-top: 3vh;
+        font-size: 2.5vh;
+    }
+    #registerInput{
+        width: 30vw;
+        float: right;
+        margin-right: 10vw;
+    }
+    #registerSubmit{
+        margin-top: 3vh;
+        margin-left: 5vw;
+        width: 70vw;
+        height: 5vh;
+        font-size: 3vh;
+        background-color: rgb(220, 220, 220);
+        border: solid;
+        border-color: rgb(128, 128, 128);
+        border-radius: 1vh;
+        cursor: pointer;
+    }
+    #indexButton{
+        margin-top: 3vh;
+        margin-left: 5vw;
+        width: 70vw;
+        height: 5vh;
+        font-size: 3vh;
+        background-color: rgb(220, 220, 220);
+        border: solid;
+        border-color: rgb(128, 128, 128);
+        border-radius: 1vh;
+        cursor: pointer;
+    }
+    #errorMessage{
+        width: 80vw;
+        text-align: center;
+        margin-top: 3vh;
+        font-size: 2vh;
+    }
+}
