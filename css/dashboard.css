@@ -1,4 +1,25 @@
 body{
     background-color: rgb(70, 70, 70);
-    color: rgb(150, 150, 150);
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+}
+#bookDiv{
+    width: 95vw;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+    margin-top: 3vh;
+    border-width: 1vw;
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+    background-color: white;
+}
+#bookText{
+    padding-left: 0.5vw;
+    width: 94vw;
+}
+#bookButton{
+    padding: 5px;
+    margin: 10px;
 }

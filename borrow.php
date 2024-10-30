@@ -9,20 +9,24 @@
         <title>borrow Book</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/edit.css">
+        <link rel="stylesheet" href="css/borrow.css">
         <script src="js/buttons.js"></script>
     </head>
     <body>
-        <form action="borrow.php" method="post">
-            <?php
-                echo "<input type='hidden' name='bookId' value='" . $_GET["id"] . "'>";
-            ?>
-            <input type='date' name='bookedUntil'>
-            <input type="submit" value="borrow">
-        </form>
-        <button onclick="GoToDashboard()">back to dashboard</button>
+        <div id="formContainer">
+            <form action="borrow.php" method="post">
+                <?php
+                    echo "<input type='hidden' name='bookId' value='" . $_GET["id"] . "'>";
+                ?>
+                <div id="headerText">Borrow Book</div>
+                <div id="inputRow">Borrow Until:<input type='date' id="inputField" name='bookedUntil'></div>
+                <input type="submit" id="submitButton" value="Borrow">
+            </form>
+            <button onclick="GoToDashboard()" id="indexButton">Back to Dashboard</button>
+        </div>
 
         <?php
+            error_reporting(0);
             $id = $_POST["bookId"];
             $bookedUntil = $_POST["bookedUntil"];
 
@@ -35,6 +39,8 @@
     
                 $sql = "UPDATE books SET stat=:stat, booked_until=:booked_until WHERE id=:id";
                 $pdo->prepare($sql)->execute($row);
+
+                header("refresh:0; url=recipt.php?id=" . $id);
             }
         ?>
     </body>

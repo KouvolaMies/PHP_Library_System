@@ -10,39 +10,19 @@
         <script src="js/buttons.js"></script>
     </head>
     <body>
-        <form action="edit.php" method="post">
-            <?php
-                echo "<input type='hidden' name='bookId' value='" . $_GET["id"] . "'>";
-            ?>
-            <input type="text" name="title">
-            <input type="text" name="author">
-            <input type="date" name="publish_date">
-            <input type="text" name="isbn">
-            <input type="submit" value="Edit Book">
-        </form>
-        <button onclick="GoToDashboard()">back to dashboard</button>
-
-        <?php
-            include "db_connect.php";
-
-            $id = $_POST["bookId"];
-            $title = $_POST["title"];
-            $author = $_POST["author"];
-            $publish_date = $_POST["publish_date"];
-            $isbn = $_POST["isbn"];
-
-            if($title != null && $author != null && $publish_date != null && $isbn != null){
-                $row = [
-                    "id" => $id,
-                    "title" => $title,
-                    "author" => $author,
-                    "publish_date" => date("Y-m-d"),
-                    "isbn" => $isbn
-                ];
-    
-                $sql = "UPDATE books SET title=:title, author=:author, publish_date=:publish_date, isbn=:isbn WHERE id=:id";
-                $pdo->prepare($sql)->execute($row);
-            }
-        ?>
+        <div id="formContainer">
+            <form action="edit_action.php" method="post">
+                <?php
+                    echo "<input type='hidden' name='bookId' value='" . $_GET["id"] . "'>";
+                ?>
+                <div id="headerText">Edit Book</div>
+                <div id="inputRow">Title:<input type="text" id="inputField" name="title"></div>
+                <div id="inputRow">Author:<input type="text" id="inputField" name="author"></div>
+                <div id="inputRow">Publish Date:<input type="date" id="inputField" name="publish_date"></div>
+                <div id="inputRow">ISBN<input type="text" id="inputField" name="isbn"></div>
+                <input type="submit" id="submitButton" value="Edit Book">
+            </form>
+            <button onclick="GoToDashboard()" id="indexButton">Back to Dashboard</button>
+        </div>
     </body>
 </html>

@@ -20,10 +20,14 @@ function GoToAddGenres(bookid){
     location.replace("add_genres.php?id=" + bookid);
 }
 function GoToDelete(bookid){
-    location.replace("delete.php?id=" + bookid);
+    if(confirm("Are you sure you want to delete this book?") == true){
+        location.replace("delete.php?id=" + bookid);
+    }
 }
 function GoToDeleteGenre(genreid){
-    location.replace("delete_genre.php?id=" + genreid);
+    if(confirm("Are you sure you want to delete this genre?") == true){
+        location.replace("delete_genre.php?id=" + genreid);
+    }
 }
 function GoToBorrow(bookid){
     location.replace("borrow.php?id=" + bookid);

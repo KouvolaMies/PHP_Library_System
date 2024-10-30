@@ -10,16 +10,20 @@
         <script src="js/buttons.js"></script>
     </head>
     <body>
-        <form action="add_books.php" method="post">
-            <input type="text" name="title">
-            <input type="text" name="author">
-            <input type="date" name="publish_date">
-            <input type="text" name="isbn">
-            <input type="submit" value="add book">
-        </form>
-        <button onclick="GoToDashboard()">back to dashboard</button>
+        <div id="formContainer">
+            <form action="add_books.php" method="post">
+                <div id="headerText">Add a Book</div>
+                <div id="inputRow">Title:<input type="text" id="inputField" name="title"></div>
+                <div id="inputRow">Author:<input type="text" id="inputField" name="author"></div>
+                <div id="inputRow">Publish Date:<input type="date" id="inputField" name="publish_date"></div>
+                <div id="inputRow">ISBN<input type="text" id="inputField" name="isbn"></div>
+                <input type="submit" id="submitButton" value="Add Book">
+            </form>
+            <button onclick="GoToDashboard()" id="indexButton">Back to Dashboard</button>
+        </div>
 
         <?php
+            error_reporting(0);
             include_once "db_connect.php";
 
             $title = $_POST["title"];

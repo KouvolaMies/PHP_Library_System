@@ -10,16 +10,20 @@
         <script src="js/buttons.js"></script>
     </head>
     <body>
-        <form action="add_genres.php" method="post">
-            <?php
-                echo "<input type='hidden' name='bookId' value='" . $_GET["id"] . "'>";
-            ?>
-            <input type="text" name="genre">
-            <input type="submit" value="add genre">
-        </form>
-        <button onclick="GoToDashboard()">back to dashboard</button>
+        <div id="formContainer">
+            <form action="add_genres.php" method="post">
+                <?php
+                    echo "<input type='hidden' name='bookId' value='" . $_GET["id"] . "'>";
+                ?>
+                <div id="headerText">Add Genres</div>
+                <div id="inputRow">Genre:<input type="text" id="inputField" name="genre"></div>
+                <input type="submit" id="submitButton" value="Add Genre">
+            </form>
+            <button onclick="GoToDashboard()" id="indexButton">Back to Dashboard</button>
+        </div>
 
         <?php
+            error_reporting(0);
             include_once "db_connect.php";
 
             $id = $_POST["bookId"];

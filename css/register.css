@@ -1,6 +1,8 @@
 body{
     background-color: rgb(70, 70, 70);
     color: rgb(150, 150, 150);
+    margin: 0;
+    padding: 0;
 }
 #indexBox{
     margin: auto;

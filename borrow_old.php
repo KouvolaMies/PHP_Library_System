@@ -9,25 +9,29 @@
         <title>borrow Book</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/edit.css">
+        <link rel="stylesheet" href="css/borrow_old.css">
         <script src="js/buttons.js"></script>
     </head>
     <body>
-        <form action="borrow_old.php" method="post">
-            <?php
-                echo "<input type='hidden' name='bookId' value='" . $_GET["id"] . "'>";
-            ?>
-            <select name='bookedHours'>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-            </select>
-            <input type="submit" value="borrow">
-        </form>
-        <button onclick="GoToDashboard()">back to dashboard</button>
+        <div id="formContainer">
+            <form action="borrow_old.php" method="post">
+                <?php
+                    echo "<input type='hidden' name='bookId' value='" . $_GET["id"] . "'>";
+                ?>
+                <div id="headerText">Borrow Book</div>
+                <div id="inputRow">Borrowed Hours:<select name='bookedHours' id="inputField">
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select></div>
+                <input type="submit" id="submitButton" value="Borrow">
+            </form>
+            <button onclick="GoToDashboard()" id="indexButton">Back to Dashboard</button>
+        </div>
 
         <?php
+            error_reporting(0);
             $id = $_POST["bookId"];
             $bookedHours = $_POST["bookedHours"];
 
@@ -44,20 +48,9 @@
     
                 $sql = "UPDATE books SET stat=:stat, booked_until=:booked_until WHERE id=:id";
                 $pdo->prepare($sql)->execute($row);
-            }
 
-            /*
-            this will be used in dashboard later
-
-            $result = $conn->query("SELECT publish_date FROM books WHERE id=" . $_GET["id"]);
-            $row = $result->fetch_assoc();
-            $now = new dateTime(date("Y-m-d"));
-            $pubDate = new dateTime($row["publish_date"]);
-            $age = $pubDate->diff($now);
-            if($age->format("%Y")){
-                do something
+                header("refresh:0; url=recipt.php?id=" . $id);
             }
-            */
         ?>
     </body>
 </html>
